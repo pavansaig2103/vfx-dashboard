@@ -2,15 +2,10 @@
   "version": 2,
   "buildCommand": "npm install --prefix client && npm install --prefix server && npm --prefix client run build",
   "outputDirectory": "client/dist",
-  "functions": {
-    "server/index.js": {
-      "runtime": "nodejs22.x"
-    }
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/server/index.js"
+      "destination": "/api/index.js"
     },
     {
       "source": "/(.*)",
