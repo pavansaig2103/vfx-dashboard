@@ -16,6 +16,13 @@ const FINAL_STATUSES = ['Approved', 'Final Delivered'];
 app.use(cors());
 app.use(express.json());
 
+app.use((req, _res, next) => {
+  if (process.env.VERCEL && req.url.startsWith('/auth')) req.url = `/api${req.url}`;
+  if (process.env.VERCEL && req.url.startsWith('/shots')) req.url = `/api${req.url}`;
+  if (process.env.VERCEL && req.url.startsWith('/stats')) req.url = `/api${req.url}`;
+  next();
+});
+
 let dbReady;
 
 function ensureDb(req, res, next) {
