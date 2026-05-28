@@ -1,0 +1,13 @@
+{
+  "name": "cinetrack-pro-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "description": "CineTrack Pro full-stack VFX shot tracking prototype",
+  "scripts": {
+    "client": "npm --prefix client run dev",
+    "server": "npm --prefix server run dev",
+    "build": "npm --prefix client run build",
+    "lint": "npm --prefix client run lint",
+    "install:all": "npm install --prefix client && npm install --prefix server"
+  }
+}
